@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "fastapi-bitwise"
+version = "0.1.0"
+description = ""
+authors = ["miko <islamimanhod@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+fastapi = {extras = ["standart"], version = "^0.95.2"}
+SQLAlchemy = "^2.0.13"
+alembic = "^1.11.0"
+uvicorn = "^0.22.0"
+pydantic = {extras = ["dotenv"], version = "^1.10.7"}
+redis = "^4.5.5"
+saq = "^0.9.4"
+
+[tool.poetry.dev-dependencies]
+pre-commit = "^3.3.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
