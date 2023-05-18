@@ -15,3 +15,6 @@ REDIS_PORT=value
 
 To run the project run 
 <code> $ docker compose up --build </code>
+Apply migrations to database.  
+To do it run next command
+<code>$ docker exec -it "container-name of web" bash scripts/migrate </code>
