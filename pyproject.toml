@@ -13,6 +13,8 @@ uvicorn = "^0.22.0"
 pydantic = {extras = ["dotenv"], version = "^1.10.7"}
 redis = "^4.5.5"
 saq = "^0.9.4"
+asyncpg = "^0.27.0"
+aiohttp = "^3.8.4"
 
 [tool.poetry.dev-dependencies]
 pre-commit = "^3.3.1"
