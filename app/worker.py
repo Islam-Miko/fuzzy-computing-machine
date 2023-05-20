@@ -3,6 +3,7 @@ from sqlalchemy import text
 
 from app.configs.database import SessionFactory
 from app.configs.settings import get_settings
+from app.tasks.question_task import save_questions
 
 settings = get_settings()
 
@@ -25,7 +26,7 @@ async def example(ctx, **kwargs):
 
 settings = {
     "queue": queue,
-    "functions": [example],
+    "functions": [example, save_questions],
     "concurrency": 10,
     "before_process": before_process,
     "after_process": after_process,
