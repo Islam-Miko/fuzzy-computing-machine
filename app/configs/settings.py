@@ -14,6 +14,7 @@ class Settings(BaseSettings):
     POSTGRES_PORT: int
     REDIS_HOST: str
     REDIS_PORT: int
+    JSERVICE: str = "https://jservice.io/api/random"
 
     class Config:
         env_file = BASE_DIR / ".env"
@@ -21,7 +22,7 @@ class Settings(BaseSettings):
     def get_database_url(self) -> PostgresDsn:
         return (
             f"postgresql+asyncpg://{self.POSTGRES_USER}:{self.POSTGRES_PASSWORD}@"
-            f"{self.POSTGRES_HOST}:{self.POSTGRES_PORT}?{self.POSTGRES_DB}"
+            f"{self.POSTGRES_HOST}:{self.POSTGRES_PORT}/{self.POSTGRES_DB}"
         )
 
     def get_redis_url(self) -> RedisDsn:
