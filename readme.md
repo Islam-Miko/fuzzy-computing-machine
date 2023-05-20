@@ -20,8 +20,8 @@ To do it run next command
 <code>$ docker exec -it "container-name of web" bash scripts/migrate </code>
 
 
-##Check routes
-####task1
+## Check tasks 
+#### task1
 Copy provided below snippet and run it in terminal. Ps.Make sure to have curl installed.
 <code>  
 curl -X 'POST' \
@@ -31,5 +31,5 @@ curl -X 'POST' \
   -d '{
   "question_num": 2
 }'  
-<code>
+</code>  
 or if you prefer QUI, go to http://0.0.0.0:8000/docs#/question/save_questions_api_v1_questions__post
