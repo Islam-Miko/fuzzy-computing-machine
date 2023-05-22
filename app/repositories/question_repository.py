@@ -1,4 +1,4 @@
-from typing import Mapping, TypeVar, Union
+from typing import Mapping, Union
 
 from fastapi import Depends
 from sqlalchemy import insert, select
@@ -6,9 +6,7 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.configs.database import get_session
 from app.models.questions import Question
-from app.repositories.base import Repository
-
-Key = TypeVar("Key", int, str)
+from app.repositories.base import Key, Repository
 
 
 class QuestionRepository(Repository[Question]):
