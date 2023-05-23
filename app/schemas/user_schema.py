@@ -7,6 +7,6 @@ class CreateSchema(BaseSchema):
     name: str
 
 
-class ResponseSchema(BaseSchema):
+class UserSchema(BaseSchema):
     id: UUID4
     token: UUID4
