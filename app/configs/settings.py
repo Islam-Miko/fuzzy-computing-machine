@@ -4,6 +4,7 @@ from pathlib import Path
 from pydantic import BaseSettings, PostgresDsn, RedisDsn
 
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
+AUDIO_DIR = BASE_DIR / "audios"
 
 
 class Settings(BaseSettings):
@@ -15,6 +16,8 @@ class Settings(BaseSettings):
     REDIS_HOST: str
     REDIS_PORT: int
     JSERVICE: str = "https://jservice.io/api/random"
+    BUCKET_HOST: str = "0.0.0.0"
+    BUCKET_PORT: int = 8000
 
     class Config:
         env_file = BASE_DIR / ".env"

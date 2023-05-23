@@ -359,6 +359,14 @@ dotenv = ["python-dotenv (>=0.10.4)"]
 email = ["email-validator (>=1.0.3)"]
 
 [[package]]
+name = "pydub"
+version = "0.25.1"
+description = "Manipulate audio with an simple and easy high level interface"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "python-dateutil"
 version = "2.8.2"
 description = "Extensions to the standard Python datetime module"
@@ -379,6 +387,17 @@ python-versions = ">=3.8"
 
 [package.extras]
 cli = ["click (>=5.0)"]
+
+[[package]]
+name = "python-multipart"
+version = "0.0.6"
+description = "A streaming multipart parser for Python"
+category = "main"
+optional = false
+python-versions = ">=3.7"
+
+[package.extras]
+dev = ["atomicwrites (==1.2.1)", "attrs (==19.2.0)", "coverage (==6.5.0)", "hatch", "invoke (==1.7.3)", "more-itertools (==4.3.0)", "pbr (==4.3.0)", "pluggy (==1.0.0)", "py (==1.11.0)", "pytest-cov (==4.0.0)", "pytest-timeout (==2.1.0)", "pytest (==7.2.0)", "pyyaml (==5.1)"]
 
 [[package]]
 name = "pyyaml"
@@ -541,7 +560,7 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "c60c371c8c8739130dbbf9747c3e6cea068a731cba624200078aaca538e66001"
+content-hash = "10e0a226250bb45037a33909af2324c49cb2a948dd52a31c200f8641b89d876e"
 
 [metadata.files]
 aiohttp = []
@@ -577,8 +596,10 @@ nodeenv = []
 platformdirs = []
 pre-commit = []
 pydantic = []
+pydub = []
 python-dateutil = []
 python-dotenv = []
+python-multipart = []
 pyyaml = []
 redis = []
 saq = []

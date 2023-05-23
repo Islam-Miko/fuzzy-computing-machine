@@ -16,3 +16,8 @@ class BaseAPIException(HTTPException):
 class EmptyBodyException(BaseAPIException):
     status_code = status.HTTP_200_OK
     detail = None
+
+
+class FileDoesNotExist(BaseAPIException):
+    status_code = status.HTTP_400_BAD_REQUEST
+    detail = "File does not exist!"
