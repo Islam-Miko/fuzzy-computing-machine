@@ -2,11 +2,12 @@ from fastapi import FastAPI, Request, status
 from fastapi.responses import JSONResponse
 
 from app.exceptions import BaseAPIException
-from app.routers import question_router
+from app.routers import question_router, user_router
 from app.worker import queue
 
 app = FastAPI()
 app.include_router(question_router.router, prefix="/api/v1")
+app.include_router(user_router.router, prefix="/api/v1")
 
 
 @app.get("/")
