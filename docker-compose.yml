@@ -9,6 +9,8 @@ services:
       - redis
       - db
     env_file: .env
+    volumes:
+      - ./audios/:/app/audios/
   redis:
     image: redis:6.0
     restart: always
