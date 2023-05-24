@@ -1,6 +1,7 @@
 version: "3.8"
 services:
   web:
+    container_name: test_web
     build: .
     command: uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
@@ -12,6 +13,7 @@ services:
     volumes:
       - ./audios/:/app/audios/
   redis:
+    container_name: test_redis
     image: redis:6.0
     restart: always
     ports:
@@ -29,6 +31,7 @@ services:
       - 8080:8080
     env_file: .env
   db:
+    container_name: test_db
     image: "postgres:13-alpine"
     volumes:
       - db_bitwise_data:/var/lib/postgresql/data/
