@@ -1,8 +1,9 @@
 version: "3.8"
 services:
   web:
+    container_name: test_web
     build: .
-    command: uvicorn app.main:app --host 0.0.0.0 --port 8000
+    command: bash scripts/start_api.sh
     ports:
       - 8000:8000
     depends_on:
@@ -12,10 +13,11 @@ services:
     volumes:
       - ./audios/:/app/audios/
   redis:
+    container_name: test_redis
     image: redis:6.0
     restart: always
-    ports:
-      - 6379:6379
+    expose:
+      - "6379"
     volumes:
       - redis_bitwise_data:/data
   worker:
@@ -25,10 +27,9 @@ services:
       - redis
       - web
       - db
-    ports:
-      - 8080:8080
     env_file: .env
   db:
+    container_name: test_db
     image: "postgres:13-alpine"
     volumes:
       - db_bitwise_data:/var/lib/postgresql/data/
@@ -36,8 +37,8 @@ services:
       POSTGRES_USER: "${POSTGRES_USER}"
       POSTGRES_PASSWORD: "${POSTGRES_PASSWORD}"
       POSTGRES_DB: "${POSTGRES_DB}"
-    ports:
-      - 5432:5432
+    expose:
+      - "5432"
 volumes:
   redis_bitwise_data: null
   db_bitwise_data: null
